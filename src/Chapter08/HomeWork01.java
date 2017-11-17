@@ -14,12 +14,9 @@ public class HomeWork01 {
 //		} while (condition);
 		Map map=new HashMap();
 		map.put("1", "LaoHeze");
-		map.put(2, "Heze");
-		System.out.println(map.get(1));
-		System.out.println(map.get(2));
-
+		map.put("2", "Heze");
+		System.out.println(map.get("1"));
+		System.out.println(map.get("2"));
 	}
-		
-
 }
 
