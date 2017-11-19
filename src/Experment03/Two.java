@@ -1,225 +1,115 @@
-//package Experment03;	//计算逾期图书馆书籍的总费用
-//
-//import java.awt.DisplayMode;
-//import java.awt.List;
-//import java.util.ArrayList;
-//import java.util.Calendar;
-//import java.util.GregorianCalendar;
-//
-//import javax.swing.JOptionPane;
-//
-//class LibraryBook{
-//	String bookName;
-//	GregorianCalendar dueDate;
-//	double chargePerDay;
-//	double maximumCharge;
-//	
-//	public LibraryBook(String bookName) {
-//		super();
-//		this.bookName = bookName;
-//	}
-//
-//	public LibraryBook(String bookName, GregorianCalendar dueDate) {
-//		super();
-//		this.bookName = bookName;
-//		this.dueDate = dueDate;
-//	}
-//
-//	public LibraryBook(String bookName, GregorianCalendar dueDate, double chargePerDay) {
-//		super();
-//		this.bookName = bookName;
-//		this.dueDate = dueDate;
-//		this.chargePerDay = chargePerDay;
-//	}
-//
-//	public LibraryBook(String bookName, GregorianCalendar dueDate, double chargePerDay, double maximumCharge) {
-//		super();
-//		this.bookName = bookName;
-//		this.dueDate = dueDate;
-//		this.chargePerDay = chargePerDay;
-//		this.maximumCharge = maximumCharge;
-//	}
-//
-//	@Override
-//	public String toString() {
-//		return "LibraryBook [bookName=" + bookName + ", dueDate=" + dueDate + ", chargePerDay=" + chargePerDay
-//				+ ", maximumCharge=" + maximumCharge + "]";
-//	}
-//	
-//	public double computeCharge(GregorianCalendar returnDate) {
-//		
-//	}
-//
-//	public String getBookName() {
-//		return bookName;
-//	}
-//
-//	public void setBookName(String bookName) {
-//		this.bookName = bookName;
-//	}
-//
-//	public GregorianCalendar getDueDate() {
-//		return dueDate;
-//	}
-//
-//	public void setDueDate(GregorianCalendar dueDate) {
-//		this.dueDate = dueDate;
-//	}
-//
-//	public double getChargePerDay() {
-//		return chargePerDay;
-//	}
-//
-//	public void setChargePerDay(double chargePerDay) {
-//		this.chargePerDay = chargePerDay;
-//	}
-//
-//	public double getMaximumCharge() {
-//		return maximumCharge;
-//	}
-//
-//	public void setMaximumCharge(double maximumCharge) {
-//		this.maximumCharge = maximumCharge;
-//	}
-//	
-//	
-//}
-//
-//class BookTracker{
-//	ArrayList<LibraryBook> LibraryBooks=new ArrayList<LibraryBook>();
-//
-//	public BookTracker() {
-//		super();
-//	}
-//	
-//	public void add(LibraryBook book) {
-//		LibraryBooks.add(book);
-//	}
-//	
-//	public double getCharge() {	//计算以今天还书列表中所有书的总超期费用
-//		double sum=0;
-//		GregorianCalendar today=new GregorianCalendar();
-//		for(LibraryBook tempBook:LibraryBooks) {
-//			sum+=tempBook.computeCharge(today);
-//		}
-//		return sum;
-//	}
-//	
-//	public double getCharge(GregorianCalendar returnDate) {	//计算传入日期的总费用
-//		double sum=0;
-//		for(LibraryBook tempBook:LibraryBooks) {
-//			sum+=tempBook.computeCharge(returnDate);
-//		}
-//		return sum;
-//	}
-//	
-//	public String getList() {	//不懂，返回表示所有图书信息的一个字符串
-//		return LibraryBooks.toString();
-//	}
-//}
-//
-//class OverdueChecker {
-//	BookTracker books;		//一个图书馆对象
-//
-//	public void start() {		//启动程序，控制整个程序
-//		inputBooks();
-//		while(isContinue()) {	//继续输入？
-//			
-//		}
-//	}
-//	
-////	创建libraryBook对象
-//	private LibraryBook createBook(String bookName, double chargePerDay, double maxCharge, GregorianCalendar dueDate) {
-//		
-//		return null;
-//	}
-//	
-////	输出要打印的信息
-//	private void display(String text) {
-//		
-//	}
-//	
-////	返回得到的所有图书的超期费用输出到标准窗口
-//	private void displayTotalCharge(double charge) {
-//		
-//	}
-//	
-////	输入图书信息，创立librarybook对象，保存到bookTracker
-//	private void inputBooks() {
-//		String str;
-//		str = JOptionPane.showInputDialog(null, "Enter a bookname:");
-//		
-//		LibraryBook tempBook=new LibraryBook(str);
-//		
-//		books.add(tempBook);
-//	}
-//	
-////	是否继续执行
-//	private boolean isContinue() {
-//		String str;
-//		str = JOptionPane.showInputDialog(null, "isContinue:(Y/n)");
-//		if(str=="Y"||str=="y")
-//			return true;
-//		else
-//			return false;
-//	}
-//	
-////	返回信息之类
-//	private double readDouble(String prompt) {
-//		
-//		
-//	}
-//	
-//	private GregorianCalendar readDate(String Prompt) {
-//		
-//		
-//	}
-//	
-//	private String readString(String prompt) {
-//		
-//	}
-//}
-//public class Two {
-//
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//		OverdueChecker admin=new OverdueChecker();
-//		admin.start();
-//	}
-//
-//}
-//class Solution 
-//{
-//public int countBattleships(vector<vector<char>>& board)
-//    {
-//        int count = 0;
-//        int row = board.size();
-//        int column = board[0].size();
-//        for (int i = 0; i < row; ++i)
-//        {
-//            for (int j = 0; j < column; ++j)
-//            {
-//                if (board[i][j] == 'X')
-//                {
-//                    if (i == 0 && j == 0)
-//                    {
-//                        ++count;
-//                    }
-//                    else if (i == 0 && board[i][j - 1] != 'X')
-//                    {
-//                        ++count;
-//                    }
-//                    else if (j == 0 && board[i - 1][j] != 'X')
-//                    {
-//                        ++count;
-//                    }
-//                    else if (i != 0 && j != 0 && board[i][j - 1] != 'X' && board[i - 1][j] != 'X')
-//                    {
-//                        ++count;
-//                    }
-//                }
-//            }
-//        }
-//        return count;
-//    }
-//};
+package Experment03;
+import java.util.*;
+class date{
+	int year;
+	int month;
+	int day;
+	public date(int year, int month, int day) {
+		super();
+		this.year = year;
+		this.month = month;
+		this.day = day;
+	}
+	@Override
+	public String toString() {
+		if(day>=10)
+			return year+"/"+month+"/"+day;
+		else {
+			return year+"/"+month+"/"+"0"+day;
+		}
+	}
+	
+}
+class BookTracker{
+	private ArrayList<LibraryBook> a1=new ArrayList<LibraryBook>();
+	public void addBook(LibraryBook book) {
+		a1.add(book);
+	}
+	public void showAll() {
+		Iterator<LibraryBook> it=a1.iterator();
+		while(it.hasNext())
+			System.out.println(it.next());
+	}
+}
+class LibraryBook{
+	private String bookName;
+	private date borrowDate;
+	private date finalDate;
+	private double price;
+	private double maxOverdueExpenses;
+	public LibraryBook(String bookName, date borrowDate, date finalDate, double price, double maxOverdueExpenses) {
+		super();
+		this.bookName = bookName;
+		this.borrowDate = borrowDate;
+		this.finalDate = finalDate;
+		this.price = price;
+		this.maxOverdueExpenses = maxOverdueExpenses;
+	}
+	@Override
+	public String toString() {
+		return "LibraryBook [bookName=" + bookName + ", borrowDate=" + borrowDate + ", finalDate=" + finalDate
+				+ ", price=" + price + ", maxOverdueExpenses=" + maxOverdueExpenses + "]";
+	}
+}
+class overdueChecker{
+	private String bookName;
+	private date borrowDate;
+	private date finalDate;
+	private double overdueExpenses=0.05;	//逾期默认罚款金额
+	private double price;
+	private double maxOverdueExpenses;
+	private int year;
+	private int month;
+	private int day;
+	private BookTracker bt=new BookTracker();
+	public overdueChecker() {
+		Scanner sc=new Scanner(System.in);	//定义输入函数对象
+		while(true) {
+			int select;
+			System.out.println("Please Input your choose");
+			System.out.println("1——add one book     2——showAllBook");
+			System.out.println("           3——break               ");
+			select=sc.nextInt();			//输入函数，int型
+			if(select==3)
+				break;
+			switch(select) {
+			case 1:
+				System.out.println("请依次输入书本信息(包括书本名称，借书时间，价格，归还日期，逾期费用(默认为0.05元)，最高逾期费(默认为书本价格)");
+				sc.nextLine();
+				bookName=sc.next();
+				year=sc.nextInt();	//输入借书时间
+				month=sc.nextInt();
+				day=sc.nextInt();
+				borrowDate=new date(year,month,day);
+				price=sc.nextDouble();
+				year=sc.nextInt();	//还书时间
+				month=sc.nextInt();
+				day=sc.nextInt();
+				finalDate=new date(year,month,day);
+				String fare=sc.next();
+				if(fare.equals("")==false) {
+					overdueExpenses=Double.parseDouble(fare);
+				}
+				String max=sc.next();
+				if(max.equals("")==false) {
+					maxOverdueExpenses=Double.parseDouble(max);
+				}
+				else {
+					overdueExpenses=price;
+				}
+				LibraryBook lb=new LibraryBook(bookName,borrowDate,finalDate,price,overdueExpenses);
+				bt.addBook(lb);
+				break;
+			case 2:
+				bt.showAll();
+			}
+		}
+	}
+}
+public class Two {
+
+	public static void main(String[] args) {
+			overdueChecker oc=new overdueChecker();
+	}
+
+}
