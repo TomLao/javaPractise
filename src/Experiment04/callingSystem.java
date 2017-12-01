@@ -18,11 +18,41 @@ VIP客户之间一样有个先后顺序，一般先拿号先被叫到；
  */
 package Experiment04;
 
-public class callingSystem {
+import java.io.IOException;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class callingSystem extends Thread {
+	private int maxTicket = 200;
+	private int maxWindow = 5;
+	private Queue<Ticket> normalQueue = new LinkedList<Ticket>();
+	private Queue<Ticket> vipQueue = new LinkedList<Ticket>();
+	private BankWindow[] bankWindows = new BankWindow[maxWindow]; // 定义窗口数组
+
+	public callingSystem() {
+		super();
+		this.start();
+		for (int i = 0; i < maxWindow; i++) {
+			this.bankWindows[i] = new BankWindow(); // 定义窗口对象
+			new Thread(this.bankWindows[i], "窗口" + (i + 1)).start();
+			// this.bankWindows[i].start(); //窗口线程启用
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		// Ticket t=new Ticket();
+		// new Thread(t,"取号").run();
+		new callingSystem();
+	}
+
+	// 启用主线程，银行线程
+	public void run() {
+		while (true) {
+			Thread thread = Thread.currentThread();
+			String thName = thread.getName();
+			System.out.println(thName + "线程正在运行");
+		}
 	}
 
 }
