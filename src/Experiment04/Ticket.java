@@ -1,25 +1,20 @@
 package Experiment04;
 
-import java.io.IOException;
+//票类
+public class Ticket {
+	private int number;
+	private boolean is_vip;
 
-public class Ticket extends Thread {
-	private int totalTickets=500;
-	int input;
-	int currentTicket=1;
-	public void run() {
-		while(true) {
-			System.out.print("取号？");
-			try {
-				input=System.in.read();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(input=='1') {
-				Thread thread=Thread.currentThread();
-				String thName=thread.getName();
-				System.out.println(thName+"正在发第 "+(currentTicket++)+" 号票");
-			}
-		}
+	public Ticket(int number, boolean is_vip) {
+		this.number = number;
+		this.is_vip = is_vip;
+	}
+
+	public int getNumber() {
+		return this.number;
+	}
+
+	public boolean isVip() {
+		return this.is_vip;	//是否為vip
 	}
 }
