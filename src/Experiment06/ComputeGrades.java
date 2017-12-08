@@ -23,14 +23,20 @@ public class ComputeGrades {
 		for (int i = 0; i < students.size(); i++) {
 			line = students.elementAt(i);
 			//TODO 不知道怎么做
-			System.out.println(line.charAt(line.indexOf("	")));
+			System.out.println(line.charAt(line.indexOf("	"))+1);
 //			System.out.println(line);
 		}
 	}
 
 	// 计算
 	public void computeGrade() {
-
+		int sum;
+		for (String line : students) {
+			String a[]=line.split(" ");
+			for(int index=a.length,i=0;i<3;i++,index--) {
+				
+			}
+		}
 	}
 
 	// 读取文件
