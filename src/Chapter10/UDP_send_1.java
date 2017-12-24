@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class UDP_send_1 {
 
 	public static void main(String[] args) throws Exception {
-		DatagramSocket dSocket = new DatagramSocket();
+		DatagramSocket dSocket = new DatagramSocket(6666);	//Ö¸¶¨¶Ë¿Ú
 		String string = "afsdasdfasdffasdfasdf";
 		Scanner scanner = new Scanner(System.in);
 		/**
