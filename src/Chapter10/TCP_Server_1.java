@@ -18,10 +18,10 @@ public class TCP_Server_1 {
 class TCPServer {
 	private static final int PORT = 6666; // 定义端口
 	public void listen() throws Exception {
-		ServerSocket serverSocket = new ServerSocket(PORT);// 创建ServerSocket对象
-		Socket client = serverSocket.accept(); // accept()方法接受对象
-		OutputStream oStream = client.getOutputStream(); // 获取客户端的输出流
-		InputStream iStream = client.getInputStream(); // 得到接受数据的流
+		ServerSocket serverSocket = new ServerSocket(PORT);	// 创建ServerSocket对象
+		Socket client = serverSocket.accept(); 				// accept()方法接受对象
+		OutputStream oStream = client.getOutputStream(); 	// 获取客户端的输出流
+		InputStream iStream = client.getInputStream(); 		// 得到接受数据的流
 		byte[] buf = new byte[1024]; // 定义缓冲区
 		Scanner scanner = new Scanner(System.in);
 		String string;// = scanner.nextLine();
