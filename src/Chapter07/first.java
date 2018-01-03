@@ -15,7 +15,7 @@ public class first {
 		
 		Iterator<Integer> it= list.iterator();
 		while(it.hasNext()) {
-			int temp=it.next();
+			Object temp=it.next();
 			System.out.println(temp);
 		}
 	}
